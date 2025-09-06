@@ -7,7 +7,11 @@
 
     "paths": {
       "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@views/*": ["./src/views/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@store/*": ["./src/store/*"]
     }
   }
 }
