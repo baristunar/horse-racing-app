@@ -5,6 +5,7 @@ import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 export default defineConfig({
+  base: '/horse-racing-app/',
   plugins: [vue(), vueDevTools()],
   resolve: {
     alias: {

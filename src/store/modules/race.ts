@@ -1,5 +1,13 @@
 import type { RaceState, Horse, RaceResultItem, RaceScheduleItem } from '@store/types'
-import type { Commit } from 'vuex'
+import type { ActionContext } from 'vuex'
+import type { HorseListState, RaceScheduleState, RaceResultsState } from '@store/types'
+
+interface RootState {
+  horses?: HorseListState
+  schedule?: RaceScheduleState
+  results?: RaceResultsState
+  race?: RaceState
+}
 
 const initialState = (): RaceState => ({
   isRaceInProgress: false,
@@ -37,11 +45,7 @@ export default {
   },
   actions: {
     startRace(
-      {
-        commit,
-      }: {
-        commit: Commit
-      },
+      { commit }: ActionContext<RaceState, RootState>,
       { distance, round, horses }: { distance: number; round: number; horses: Horse[] },
     ) {
       commit('SET_RACE_IS_IN_PROGRESS', true)
@@ -49,19 +53,11 @@ export default {
       commit('SET_CURRENT_RACING_HORSES', horses)
       commit('SET_RACE_IS_FINISHED', false)
     },
-    pauseRace({ commit }: { commit: Commit }) {
+  pauseRace({ commit }: ActionContext<RaceState, RootState>) {
       commit('SET_RACE_IS_IN_PROGRESS', false)
     },
     finishRace(
-      {
-        commit,
-        state,
-        rootState,
-      }: {
-        commit: Commit
-        state: RaceState
-        rootState: { schedule?: { data?: RaceScheduleItem[] } }
-      },
+      { commit, state, rootState }: ActionContext<RaceState, RootState>,
       result: RaceResultItem,
     ) {
       commit('SET_RACE_IS_FINISHED', true)
@@ -93,7 +89,7 @@ export default {
       }
     },
     nextRound(
-      { commit }: { commit: Commit },
+      { commit }: ActionContext<RaceState, RootState>,
       { distance, round, horses }: { distance: number; round: number; horses: Horse[] },
     ) {
       commit('SET_CURRENT_LAP', { distance, round })
@@ -101,7 +97,7 @@ export default {
       commit('SET_RACE_IS_FINISHED', false)
       commit('SET_RACE_IS_IN_PROGRESS', true)
     },
-    resumeRace({ commit }: { commit: Commit }) {
+  resumeRace({ commit }: ActionContext<RaceState, RootState>) {
       commit('SET_RACE_IS_IN_PROGRESS', true)
     },
   },
