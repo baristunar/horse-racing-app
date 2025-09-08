@@ -1,0 +1,9 @@
+.homepage {
+  padding: 1rem;
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 3fr 2fr;
+    gap: 1rem;
+  }
+}

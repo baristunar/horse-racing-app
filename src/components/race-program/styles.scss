@@ -1,0 +1,46 @@
+.race-schedule {
+  display: flex;
+  gap: 1.25rem;
+
+  &__text {
+    margin-top: 0.625rem;
+    background-color: var(--success);
+    color: var(--accent);
+    text-align: center;
+    padding: 0.25rem 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    &.--error {
+      background-color: var(--error);
+      color: var(--accent);
+    }
+  }
+
+  &__program {
+    &-title {
+      background-color: var(--primary-color);
+      color: var(--accent);
+    }
+  }
+
+  &__results {
+    &-title {
+      background-color: var(--secondary-color);
+      color: var(--accent);
+    }
+  }
+
+  &__program,
+  &__results {
+    flex: 1;
+    max-height: 75vh;
+    overflow-y: auto;
+
+    &-title {
+      padding: 0.5rem 0;
+      text-align: center;
+      border-radius: 8px;
+    }
+  }
+}

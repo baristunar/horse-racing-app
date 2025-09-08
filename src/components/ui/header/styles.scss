@@ -1,0 +1,29 @@
+.header {
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  padding: 0.625rem 1.25rem;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-list {
+      display: flex;
+    }
+
+    &-item {
+      list-style: none;
+      margin-left: 20px;
+    }
+
+    &-link {
+      color: var(--accent);
+      text-decoration: none;
+
+      &:hover {
+        color: var(--accen-hover);
+        text-decoration: underline;
+      }
+    }
+  }
+}
