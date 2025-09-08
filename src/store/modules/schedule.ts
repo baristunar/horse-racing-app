@@ -15,7 +15,7 @@ export default {
     },
     RESET_RACE_SCHEDULE(state: RaceScheduleState) {
       Object.assign(state, initialState())
-    }
+    },
   },
   actions: {
     generateRaceSchedule({

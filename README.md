@@ -101,14 +101,6 @@ Includes (examples):
 Each horse gets an estimated finish duration derived from condition + randomness. A timer updates percentage progress; when all reach 100%, standings are computed, sorted, and saved.
 
 ---
-## Contributing
-Fork → feature branch → tests → pull request.
-
----
-## License
-Educational / sample project. (Add MIT or another license if needed.)
-
----
 ## Quick Command Reference
 ```bash
 npm run dev            # Development server
