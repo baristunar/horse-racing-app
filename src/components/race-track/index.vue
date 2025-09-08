@@ -6,6 +6,7 @@
         <div class="race-track__horse-anim" :style="horseStyles[index]">
           <HorseIcon :fill="horse?.color?.hex" />
         </div>
+        <span class="race-track__finish-line"></span>
       </span>
     </div>
     <div v-if="isRaceInProgress" class="race-track__status">
