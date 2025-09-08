@@ -1,5 +1,10 @@
 <template>
   <section class="race-track">
+    <div v-if="isRaceInProgress" class="race-track__status race-track__status--top">
+      <span class="race-track__status-text">
+        {{ currentRound }}{{ formatRound(currentRound) }} Lap - {{ raceDistance ?? 0 }}m
+      </span>
+    </div>
     <div class="race-track__line" v-for="(horse, index) in horses" :key="horse.name">
       <span class="race-track__line-number">{{ index + 1 }}</span>
       <span class="race-track__line-horse" ref="trackRefs">
@@ -7,11 +12,6 @@
           <HorseIcon :fill="horse?.color?.hex" />
         </div>
         <span class="race-track__finish-line"></span>
-      </span>
-    </div>
-    <div v-if="isRaceInProgress" class="race-track__status">
-      <span class="race-track__status-text">
-        {{ currentRound }}{{ formatRound(currentRound) }} Lap - {{ raceDistance ?? 0 }}m
       </span>
     </div>
   </section>

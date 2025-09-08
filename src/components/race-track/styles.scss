@@ -2,6 +2,25 @@
   display: block;
   padding: 5rem 0;
 
+  &__finish-line {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 50px;
+    background: repeating-linear-gradient(
+      45deg,
+      var(--secondary-color) 0,
+      var(--secondary-color) 6px,
+      var(--accent) 6px,
+      var(--accent) 12px
+    );
+    border-radius: 2px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
   &__line {
     height: 65px;
     display: flex;
@@ -27,6 +46,10 @@
       border-top: 2px dashed var(--secondary-color);
       position: relative;
     }
+
+    &:last-child &-horse {
+      border-bottom: 2px dashed var(--secondary-color);
+    }
   }
 
   &__horse-anim {
@@ -39,23 +62,19 @@
   }
 
   &__status {
-    margin-top: 1rem;
+    margin-bottom: 1rem;
     display: flex;
     justify-content: center;
   }
 
   &__status-text {
     background: var(--primary-color);
-    width: 100%;
+    width: 50%;
     text-align: center;
     color: var(--accent);
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     font-weight: 600;
-  }
-
-  &__line:last-child > &__line-horse {
-    border-bottom: 2px dashed var(--secondary-color);
   }
 
   @keyframes horse-bounce-move {
