@@ -15,6 +15,12 @@ export default mergeConfig(
         reportsDirectory: 'coverage',
         include: ['src/**'],
         exclude: ['**/*.spec.ts', 'node_modules/**'],
+        thresholds: {
+          statements: 70,
+          branches: 60,
+          functions: 70,
+          lines: 70,
+        },
       },
     },
   }),
