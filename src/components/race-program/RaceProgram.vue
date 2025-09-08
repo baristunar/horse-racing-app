@@ -2,12 +2,14 @@
   <section class="race-schedule__program">
     <h2 class="race-schedule__program-title">Program</h2>
 
-    <div v-for="(program, idx) in raceProgram" :key="program.id ?? idx">
-      <p class="race-schedule__text">
-        {{ program.round }}{{ formatRound(program.round) }} Lap - {{ program.distance }}m
-      </p>
+    <div class="race-schedule__program-item">
+      <div v-for="(program, idx) in raceProgram" :key="program.id ?? idx">
+        <p class="race-schedule__text">
+          {{ program.round }}{{ formatRound(program.round) }} Lap - {{ program.distance }}m
+        </p>
 
-      <Table :head="tableHead" :body="programTableBody(program.participants)" />
+        <Table :head="tableHead" :body="programTableBody(program.participants)" />
+      </div>
     </div>
   </section>
 </template>

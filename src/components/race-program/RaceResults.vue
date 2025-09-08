@@ -3,19 +3,21 @@ k
   <section class="race-schedule__results">
     <h2 class="race-schedule__results-title">Results</h2>
 
-    <div v-for="(program, idx) in raceProgram" :key="program.id ?? idx">
-      <p class="race-schedule__text">
-        {{ program.round }}{{ formatRound(program.round) }} Lap - {{ program.distance }}m
-      </p>
+    <div class="race-schedule__results-item">
+      <div v-for="(program, idx) in raceProgram" :key="program.id ?? idx">
+        <p class="race-schedule__text">
+          {{ program.round }}{{ formatRound(program.round) }} Lap - {{ program.distance }}m
+        </p>
 
-      <div v-if="raceResultsByRound[program.round]">
-        <Table
-          :head="tableHead"
-          :body="programTableBody(raceResultsByRound[program.round].standing)"
-        />
-      </div>
-      <div v-else>
-        <p class="race-schedule__text --error">No results yet</p>
+        <div v-if="raceResultsByRound[program.round]">
+          <Table
+            :head="tableHead"
+            :body="programTableBody(raceResultsByRound[program.round].standing)"
+          />
+        </div>
+        <div v-else>
+          <p class="race-schedule__text --error">No results yet</p>
+        </div>
       </div>
     </div>
   </section>
