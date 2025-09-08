@@ -2,6 +2,8 @@
 
 An interactive horse racing simulation: generate a multi‑round race program, start/pause races, watch animated progress, and view per‑round results. Built with Vue 3, TypeScript, Vuex, Vite, and Vitest.
 
+🔗 Live Demo: https://baristunar.github.io/horse-racing-app/
+
 ![Application Preview](src/assets/images/horse-racing-app.gif)
 
 ---
