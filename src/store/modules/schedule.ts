@@ -1,6 +1,6 @@
 import type { RaceScheduleItem, RaceScheduleState, Horse } from '@store/types'
 import type { Commit } from 'vuex'
-import { generateSchedule } from '@/utils/helpers/generateSchedule'
+import { generateSchedule } from '@utils/helpers/generateSchedule'
 
 const initialState = () => ({
   data: [],

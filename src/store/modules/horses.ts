@@ -1,6 +1,6 @@
 import type { HorseListState, Horse } from '@store/types'
 import type { Commit } from 'vuex'
-import * as horseService from '@/services/horseService'
+import * as horseService from '@services/horseService'
 
 const initialState = (): HorseListState => ({
   data: [],

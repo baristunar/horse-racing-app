@@ -1,5 +1,5 @@
-import { generateShuffledHorses } from '@/utils/helpers/generateHorses'
+import { generateShuffledHorses } from '@utils/helpers/generateHorses'
 
-export function getHorses() {
+export const getHorses = () => {
   return generateShuffledHorses()
 }

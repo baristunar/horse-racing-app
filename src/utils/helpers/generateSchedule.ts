@@ -1,4 +1,4 @@
-import type { Horse } from '@/store/types'
+import type { Horse } from '@store/types'
 
 export const generateSchedule = ({
   horseList,

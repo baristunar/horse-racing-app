@@ -1,4 +1,4 @@
-import type { RaceState, Horse, RaceResultItem, RaceScheduleItem } from '@/store/types'
+import type { RaceState, Horse, RaceResultItem, RaceScheduleItem } from '@store/types'
 import type { Commit } from 'vuex'
 
 const initialState = (): RaceState => ({
