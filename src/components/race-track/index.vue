@@ -1,6 +1,6 @@
 <template>
   <section class="race-track">
-    <div v-if="isRaceInProgress" class="race-track__status race-track__status--top">
+    <div v-if="currentRound" class="race-track__status race-track__status--top">
       <span class="race-track__status-text">
         {{ currentRound }}{{ formatRound(currentRound) }} Lap - {{ raceDistance ?? 0 }}m
       </span>
