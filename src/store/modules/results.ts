@@ -11,7 +11,7 @@ export default {
     SET_RACE_RESULTS(state: RaceResultsState, results: RaceResultItem) {
       state.data.push(results)
     },
-    RESET_RACE_STATE(state: RaceResultsState) {
+    RESET_RESULT_STATE(state: RaceResultsState) {
       Object.assign(state, initialState())
     },
   },

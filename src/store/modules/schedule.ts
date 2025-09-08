@@ -13,6 +13,9 @@ export default {
     SET_RACE_SCHEDULE(state: RaceScheduleState, scheduleData: RaceScheduleItem[]) {
       state.data = scheduleData
     },
+    RESET_RACE_SCHEDULE(state: RaceScheduleState) {
+      Object.assign(state, initialState())
+    }
   },
   actions: {
     generateRaceSchedule({

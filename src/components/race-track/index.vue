@@ -132,7 +132,7 @@ const stopRace = () => {
 const estimateFinishTime = (horse: Horse): number => {
   const condition = Math.max(horse?.condition ?? 1, 1)
   const randomness = 0.7 + Math.random() * 0.6
-  const baseSpeed = 2.5
+  const baseSpeed = 3
   const maxDuration = 20
 
   let seconds = raceDistance.value / (condition * randomness * baseSpeed)

@@ -13,7 +13,7 @@ describe('store/modules/results', () => {
     const module = resultsModule as unknown as {
       mutations: {
         SET_RACE_RESULTS(s: RaceResultsState, r: RaceResultItem): void
-        RESET_RACE_STATE(s: RaceResultsState): void
+        RESET_RESULT_STATE(s: RaceResultsState): void
       }
       getters: { getRaceResults(s: RaceResultsState): RaceResultItem[] }
     }
@@ -23,7 +23,7 @@ describe('store/modules/results', () => {
     expect(state.data[0]).toBe(item)
   })
 
-  it('mutation RESET_RACE_STATE resets to initial', () => {
+  it('mutation RESET_RESULT_STATE resets to initial', () => {
     const state: RaceResultsState = {
       data: [
         {
@@ -34,10 +34,10 @@ describe('store/modules/results', () => {
     }
 
     const module = resultsModule as unknown as {
-      mutations: { RESET_RACE_STATE(s: RaceResultsState): void }
+      mutations: { RESET_RESULT_STATE(s: RaceResultsState): void }
     }
 
-    module.mutations.RESET_RACE_STATE(state)
+    module.mutations.RESET_RESULT_STATE(state)
     expect(state.data).toEqual([])
   })
 

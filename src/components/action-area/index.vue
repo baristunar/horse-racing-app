@@ -1,10 +1,10 @@
 <template>
   <section class="action-area">
-    <Button :disabled="isHorsesGenerated" :handle-click="generateBtnOnClick"
+    <Button :disabled="isHorsesGenerated && !isFinished" :handle-click="generateBtnOnClick"
       >Generate Program</Button
     >
     <Button
-      :disabled="!isHorsesGenerated"
+      :disabled="isFinished || !isHorsesGenerated"
       :style="{
         background: getPlayButtonStyle(),
       }"
@@ -27,6 +27,7 @@ defineOptions({
 })
 
 const isStarted = computed(() => store.state.race.isRaceInProgress)
+const isFinished = computed(() => store.state.race.isRaceFinished)
 const playBtnText = computed(() => (isStarted.value ? 'Pause' : 'Start'))
 const isHorsesGenerated = computed(() => store.state.horses.data.length > 0)
 
@@ -67,10 +68,10 @@ const playBtnOnClick = () => {
 }
 
 const generateBtnOnClick = () => {
-  const isHorsesGenerated = store.state.horses.data.length > 0
-
-  if (isHorsesGenerated) return
-
+  store.commit('race/RESET_STATE')
+  store.commit('results/RESET_RESULT_STATE')
+  store.commit('horses/RESET_HORSE_LIST')
+  store.commit('schedule/RESET_RACE_SCHEDULE')
   store.dispatch('horses/initHorses')
   store.dispatch('schedule/generateRaceSchedule')
 }
