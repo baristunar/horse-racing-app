@@ -32,7 +32,7 @@ const playBtnText = computed(() => (isStarted.value ? 'Pause' : 'Start'))
 const isHorsesGenerated = computed(() => store.state.horses.data.length > 0)
 
 const getPlayButtonStyle = () => {
-  if (!isHorsesGenerated.value) return ''
+  if (!isHorsesGenerated.value || isFinished.value) return ''
   return isStarted.value ? 'var(--error)' : 'var(--success)'
 }
 
