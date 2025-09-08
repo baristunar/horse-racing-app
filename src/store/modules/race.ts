@@ -53,7 +53,7 @@ export default {
       commit('SET_CURRENT_RACING_HORSES', horses)
       commit('SET_RACE_IS_FINISHED', false)
     },
-  pauseRace({ commit }: ActionContext<RaceState, RootState>) {
+    pauseRace({ commit }: ActionContext<RaceState, RootState>) {
       commit('SET_RACE_IS_IN_PROGRESS', false)
     },
     finishRace(
@@ -97,7 +97,7 @@ export default {
       commit('SET_RACE_IS_FINISHED', false)
       commit('SET_RACE_IS_IN_PROGRESS', true)
     },
-  resumeRace({ commit }: ActionContext<RaceState, RootState>) {
+    resumeRace({ commit }: ActionContext<RaceState, RootState>) {
       commit('SET_RACE_IS_IN_PROGRESS', true)
     },
   },
