@@ -14,7 +14,7 @@ export default mergeConfig(
         reporter: ['text', 'lcov', 'html'],
         reportsDirectory: 'coverage',
         include: ['src/**'],
-        exclude: ['**/*.spec.ts', 'cypress/**', 'node_modules/**'],
+        exclude: ['**/*.spec.ts', 'node_modules/**'],
       },
     },
   }),
